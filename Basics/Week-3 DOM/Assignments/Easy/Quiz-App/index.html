@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Quiz App</title>
 </head>
 <body>
@@ -11,23 +12,24 @@
         <div id="card">
             <div id="question">This is the question.</div>
             <div id="options">
-                <div class="option1 item">
+                <div class="item">
                     <input type="radio" name="choice" id="option1">
-                    <label for="option1">option 1</label>
+                    <label for="option1" class="optionLabel">option 1</label>
                 </div>
-                <div class="option2 item">
+                <div class="item">
                     <input type="radio" name="choice" id="option2">
-                    <label for="option1">option 2</label>
+                    <label for="option2" class="optionLabel">option 2</label>
                 </div>
-                <div class="option3 item">
+                <div class="item">
                     <input type="radio" name="choice" id="option3">
-                    <label for="option1">option 3</label>
+                    <label for="option3" class="optionLabel">option 3</label>
                 </div>
-                <div class="option4 item">
+                <div class="item">
                     <input type="radio" name="choice" id="option4">
-                    <label for="option1">option 4</label>
+                    <label for="option4" class="optionLabel">Helicopters Terminals Motorboats Lamborginis</label>
                 </div>
             </div>
+            <button id="submit" onclick="submit()">Submit</button>
         </div>
     </div>
 </body>

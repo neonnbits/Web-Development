@@ -19,10 +19,18 @@
     height: auto;
     width: 60%;
     background-color: white;
+    border-radius: 10px;
+    max-width: 610px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
 }
 
 #question{
-    font-size: 1.5em;
+    font-size: 30px;
     padding: 20px;
     min-height: 70px;
 }
@@ -31,14 +39,41 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .item{
-    width: calc(50% - 10px); /* 50% for two items per row, minus gap */
+    width: 100%;
     background-color: lightgray;
     padding: 20px;
     text-align: center;
-    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+    cursor: pointer;
+}
+
+#submit{
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    font-weight: 600;
+    background-color: rgb(201, 243, 86);
+    border: none;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: rgb(211, 240, 130);
+}
+
+#submit:active {
+    background-color: rgb(146, 182, 49); /* Change to any color */
+}
+
+@media (width < 800px) {
+    #card{
+        width: 90%;
+    }
 }
