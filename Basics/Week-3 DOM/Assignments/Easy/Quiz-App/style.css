@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(176, 221, 221);
+    margin: 0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card{
+    height: auto;
+    width: 60%;
+    background-color: white;
+}
+
+#question{
+    font-size: 1.5em;
+    padding: 20px;
+    min-height: 70px;
+}
+
+#options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.item{
+    width: calc(50% - 10px); /* 50% for two items per row, minus gap */
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}

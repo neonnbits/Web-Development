@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Derived Rendering</title>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script>
+        const todos = [{
+            id: 1,
+            title: "Go to gym"
+        }, {
+            id: 2,
+            title: "Clean the car"
+        }]
+
+      function render(todos) {
+        let list = document.getElementById("root");
+        todos.forEach((e, index) => {
+            
+            let div = document.createElement("div");
+            div.classList.add(`todo-${e.id}`)
+            let item = document.createElement("li");
+            item.innerText = e.title;
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "delete"
+            deleteBtn.onclick = () => {
+                list.removeChild(div);
+            }
+
+            div.appendChild(item);
+            div.appendChild(deleteBtn);
+            list.appendChild(div);
+        })
+    }
+    render(todos);
+    </script>
+  </body>
+</html>

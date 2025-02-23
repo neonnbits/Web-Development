@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button onclick="startCounter()">Start</button>
+    <button onclick="stopCounter()">Stop</button>
+
+    <script>
+        let count = 0;
+        let intervalId = null;
+
+        function startCounter() {
+            if (!intervalId) {
+                intervalId = setInterval(() => {
+                    document.getElementById("counter").innerText = count;
+                    count++;
+                }, 1000);
+            }
+        }
+
+        function stopCounter() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    </script>
+</body>
+</html>
