@@ -12,7 +12,7 @@ console.log(greetfunc("deek"));
 // when a function remembers the variables from its outer scope even after that outer function 
 //has finished executing
 
-function outer() {
+function counter() {
     let counter = 0;
 
     return function inner() {
