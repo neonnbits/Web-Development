@@ -1,32 +1,21 @@
 const { Router } = require("express");
-const {User, Todo} = require("../config/db")
+const Todo = require("../models/Todo")
+const User = require("../models/User")
+const { createTodo, getTodos,
+    getTodoById,
+    updateTodo,
+    deleteTodo,
+    deleteAllTodos
+} = require("../controllers/todoController");
 const adminMiddleware = require("../middleware/authMiddleware");
 const router = Router();
 
 // todo Routes
-router.post('/', (req, res) => {
-    
-});
-
-router.put('/', adminMiddleware, (req, res) => {
-    // Implement update todo  logic
-});
-
-router.delete('/', adminMiddleware, (req, res) => {
-    // Implement delete todo logic
-});
-
-router.delete('/:id', adminMiddleware, (req, res) => {
-    // Implement delete todo by id logic
-});
-
-
-router.get('/', adminMiddleware, (req, res) => {
-    // Implement fetching all todo logic
-});
-
-router.get('/:id', adminMiddleware, (req, res) => {
-    // Implement fetching todo by id logic
-});
+router.post('/', adminMiddleware, createTodo);
+router.put('/:id', adminMiddleware, updateTodo);
+router.delete('/', adminMiddleware, deleteAllTodos);
+router.delete('/:id', adminMiddleware, deleteTodo);
+router.get('/', adminMiddleware, getTodos);
+router.get('/:id', adminMiddleware, getTodoById);
 
 module.exports = router;
